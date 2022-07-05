@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+    <title>Password Generator</title>
+</head>
+
+<body>
+
+    <header id="header_container">
+
+        <h1><strong>Générateur</strong> de <strong>mot de passe</strong></h1>
+
+        <div id="header_paragraph">
+
+            <p id="header_paragraph_firstpara">
+                Marre de chercher un <strong>mot de passe</strong> compliqué ?
+            </p>
+
+            <p id="header_paragraph_secondpara">
+                Ce site est fait pour vous. Choisissez le nombre de caractère, et le système s'occupe de vous générer un
+                <strong>mot de passe</strong> sur mesure et <strong>aléatoire</strong>!
+                </br>
+                Vous pouvez également modifier celui-ci s'il ne vous convient pas!
+            </p>
+
+        </div>
+    </header>
+
+    <input id="password_generator-input" type="text" placeholder="Mot de passe" />
+
+    <button id="password_generator-button">Générer nouveau mot de passe</button>
+
+    <fieldset id="password_generator-radios">
+        <legend>Sélectionnez le nombre de caractères</legend>
+
+        <ul>
+            <li>
+                <input class="password_generator-radio" id="password_generator-radio-first" name="radio_characters"
+                    type="radio" value="8" checked>
+                <label for="password_generator-radio-first">8 caractères</label>
+            </li>
+
+            <li>
+                <input class="password_generator-radio" id="password_generator-radio-second" name="radio_characters"
+                    type="radio" value="16">
+                <label for="password_generator-radio-second">16 caractères</label>
+            </li>
+
+            <li>
+                <input class="password_generator-radio" id="password_generator-radio-third" name="radio_characters"
+                    type="radio" value="32">
+                <label for="password_generator-radio-third">32 caractères</label>
+            </li>
+
+            <li>
+                <input class="password_generator-radio" id="password_generator-radio-fourth" name="radio_characters"
+                    type="radio" value="64">
+                <label for="password_generator-radio-fourth">64 caractères</label>
+            </li>
+        </ul>
+
+    </fieldset>
+
+</body>
+
+<script src="script.js" type="text/javascript"></script>
+
+</html>

@@ -1,1 +1,24 @@
-/*# sourceMappingURL=main.css.map */
+*::first-letter {
+  text-transform: uppercase;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+body a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+body button {
+  background-color: transparent;
+  border: none;
+}
+body li {
+  list-style: none;
+}/*# sourceMappingURL=main.css.map */
