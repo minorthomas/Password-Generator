@@ -12,7 +12,24 @@ body {
     padding: 0;
     box-sizing: border-box;
     width: 320px;
-    ;
+
+    &[mode="light"] {
+        color: black;
+        background-color: white;
+    }
+
+    &[mode="dark"] {
+        color: white;
+        background-color: #081B33;
+
+        a {
+            color: white;
+
+            &:hover {
+                color: #64c9ff !important;
+            }
+        }
+    }
 
     a {
         text-decoration: none;
@@ -42,17 +59,58 @@ body {
 
 //HEADER
 
-// header {
+header {
+    position: relative;
 
-//     h1 {}
+    .switch {
+        position: absolute;
+        top: 2em;
+        right: 0;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        margin: 16px;
 
-//     &_paragraph {
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
 
-//         #first_paragraph {}
+            &:checked+.slider {
+                background-color: #455277;
+            }
 
-//         #second_paragraph {}
-//     }
-// }
+            &:checked+.slider::before {
+                transform: translatex(25px);
+                content: '🌙';
+            }
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #41C0F2;
+            box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.2), inset -2px -3px 2px rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            border-radius: 34px;
+            transition: 0.4s;
+
+            &::before {
+                content: '🌞';
+                position: absolute;
+                left: 6px;
+                bottom: 3px;
+                height: 26px;
+                width: 26px;
+                transition: 0.4s;
+            }
+        }
+
+    }
+}
 
 ///////////////////////////////
 
@@ -311,6 +369,12 @@ body {
 @media only screen and (min-width: "1200px") {
     body {
         width: 992px;
+
+        #header {
+            .switch {
+                top: 0;
+            }
+        }
 
         .generator_choose_characters {
 

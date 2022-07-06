@@ -77,3 +77,22 @@ function changeNumberOfCharactersAndGeneratePassword() {
 
 changeNumberOfCharactersAndGeneratePassword();
 
+function darkMode() {
+    const switchMode = document.querySelector(".switch");
+
+    const body = document.querySelector("body");
+
+    console.log(body);
+
+    switchMode.addEventListener("change", event => {
+        event.preventDefault();
+
+        if (event.target.checked) {
+            body.setAttribute("mode", "dark");
+        } else {
+            body.setAttribute("mode", "light");
+        }
+    })
+}
+
+darkMode();

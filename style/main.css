@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *::first-letter {
   text-transform: uppercase;
 }
@@ -12,6 +13,20 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 320px;
+}
+body[mode=light] {
+  color: black;
+  background-color: white;
+}
+body[mode=dark] {
+  color: white;
+  background-color: #081B33;
+}
+body[mode=dark] a {
+  color: white;
+}
+body[mode=dark] a:hover {
+  color: #64c9ff !important;
 }
 body a {
   text-decoration: none;
@@ -30,6 +45,52 @@ body h1 {
 }
 body h1 strong {
   font-weight: bold;
+}
+
+header {
+  position: relative;
+}
+header .switch {
+  position: absolute;
+  top: 2em;
+  right: 0;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 16px;
+}
+header .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .switch input:checked + .slider {
+  background-color: #455277;
+}
+header .switch input:checked + .slider::before {
+  transform: translatex(25px);
+  content: "🌙";
+}
+header .switch .slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #41C0F2;
+  box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.2), inset -2px -3px 2px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+header .switch .slider::before {
+  content: "🌞";
+  position: absolute;
+  left: 6px;
+  bottom: 3px;
+  height: 26px;
+  width: 26px;
+  transition: 0.4s;
 }
 
 #generator .generator_password {
@@ -208,6 +269,9 @@ body h1 strong {
 @media only screen and (min-width: 1200px) {
   body {
     width: 992px;
+  }
+  body #header .switch {
+    top: 0;
   }
   body .generator_choose_characters ul {
     margin: auto 15em;
