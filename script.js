@@ -1,14 +1,40 @@
-const getInputPassword = document.querySelector("#password_generator-input");
-const getButtonGeneratePassword = document.querySelector("#password_generator-button");
+const getInputPassword = document.querySelector("#generator-input");
+const getButtonGeneratePassword = document.querySelector("#generator-button");
 
-const getFirstRadio = document.querySelector("#password_generator-radio-first");
-const getSecondRadio = document.querySelector("#password_generator-radio-second");
-const getThirdRadio = document.querySelector("#password_generator-radio-third");
-const getFourthRadio = document.querySelector("#password_generator-radio-fourth");
+const getFirstRadio = document.querySelector("#radio_first");
+const getSecondRadio = document.querySelector("#radio_second");
+const getThirdRadio = document.querySelector("#radio_third");
+const getFourthRadio = document.querySelector("#radio_fourth");
+
+const getFirstCheckbox = document.querySelector("#checkbox_first");
+const getSecondCheckbox = document.querySelector("#checkbox_second");
+const getThirdCheckbox = document.querySelector("#checkbox_third");
+const getFourthCheckbox = document.querySelector("#checkbox_fourth");
+
+const test = document.querySelector(".test");
 
 function generatePassword(length) {
     let result = '';
-    let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_:().";
+    let characters = '';
+
+    let lettersLowercase = "abcdefghijklmnopqrstuvwxyz";
+    let lettersUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let numbers = "0123456789";
+    let specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+
+    if (getFirstCheckbox.checked) {
+        characters += lettersLowercase;
+    }
+    if (getSecondCheckbox.checked) {
+        characters += lettersUppercase;
+    }
+    if (getThirdCheckbox.checked) {
+        characters += numbers;
+    }
+    if (getFourthCheckbox.checked) {
+        characters += specialCharacters;
+    }
+
     let charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
         result += characters.charAt(Math.random() *
@@ -16,6 +42,8 @@ function generatePassword(length) {
     }
     return result;
 }
+
+
 
 function changeNumberOfCharactersAndGeneratePassword() {
     getInputPassword.value = generatePassword(8);
