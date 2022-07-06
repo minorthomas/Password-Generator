@@ -3,14 +3,15 @@
 }
 
 * {
-  font-family: "Sunflower", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 body {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  max-width: 320px;
+  width: 320px;
 }
 body a {
   text-decoration: none;
@@ -24,6 +25,12 @@ body button {
 body li {
   list-style: none;
 }
+body h1 {
+  font-weight: bold;
+}
+body h1 strong {
+  font-weight: bold;
+}
 
 #generator .generator_password {
   display: flex;
@@ -36,20 +43,31 @@ body li {
   margin: auto;
   text-align: center;
   padding: 1em;
+  font-size: 1em;
+}
+#generator .generator_password_input:focus {
+  background-color: rgb(243, 243, 243);
 }
 #generator .generator_password_button {
   padding: 1em;
-  margin: auto;
+  border-radius: 0.3em;
+  margin: 0.5em auto 0 auto;
   cursor: pointer;
+  background-color: #00a4ff;
+  color: white;
 }
 #generator .generator_password_button:hover {
-  color: blue;
+  color: black;
+  background-color: #64c9ff;
 }
 #generator .generator_choose_characters ul {
   display: flex;
   flex-direction: row;
   padding: 0;
   justify-content: space-around;
+}
+#generator .generator_choose_characters ul li .generator_choose_characters_radio {
+  cursor: pointer;
 }
 #generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio] {
   position: absolute;
@@ -83,25 +101,31 @@ body li {
 #generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio] + .generator_choose_characters_radio_label:empty:before {
   margin-right: 0;
 }
-#generator .generator_choose_additional_checkbox {
+#generator .generator_choose_additional ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  align-items: center;
+}
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox {
   display: flex;
   align-items: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-#generator .generator_choose_additional_checkbox_input {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_input {
   display: none;
 }
-#generator .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon {
   background-color: #00a4ff;
 }
-#generator .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon:before {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon:before {
   transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
 }
-#generator .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon:after {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon:after {
   transform: translate3d(20px, 2px, 0);
 }
-#generator .generator_choose_additional_checkbox_icon {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_icon {
   position: relative;
   display: inline-block;
   max-width: 42px;
@@ -113,7 +137,7 @@ body li {
   vertical-align: text-bottom;
   transition: all 0.3s linear;
 }
-#generator .generator_choose_additional_checkbox_icon:before {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_icon:before {
   content: "";
   position: absolute;
   left: 0;
@@ -124,7 +148,7 @@ body li {
   transform: translate3d(2px, 2px, 0) scaleX(1);
   transition: all 0.25s linear;
 }
-#generator .generator_choose_additional_checkbox_icon:after {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_icon:after {
   content: "";
   position: absolute;
   left: 0;
@@ -136,8 +160,59 @@ body li {
   transform: translate3d(2px, 2px, 0);
   transition: all 0.2s ease-in-out;
 }
-#generator .generator_choose_additional_checkbox-label {
+#generator .generator_choose_additional ul li .generator_choose_additional_checkbox_label {
   font-size: 14px;
   margin-left: 5px;
   font-weight: 400;
+}
+#generator .generator_choose_additional_error {
+  color: red;
+}
+
+#password_checker {
+  margin-top: 2em;
+}
+#password_checker h2 {
+  font-size: 1.2em;
+}
+#password_checker div {
+  display: flex;
+  flex-direction: row;
+  white-space: pre-wrap;
+  flex-wrap: wrap;
+}
+#password_checker div p {
+  margin: 0;
+}
+#password_checker div a {
+  text-decoration: underline;
+}
+#password_checker div a:hover {
+  color: blue;
+}
+
+#footer {
+  width: 100%;
+}
+#footer p {
+  margin-top: 10em;
+  font-size: 0.6em;
+  text-align: end;
+}
+
+@media only screen and (min-width: 576px) {
+  body {
+    width: 566px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    width: 992px;
+  }
+  body .generator_choose_characters ul {
+    margin: auto 15em;
+  }
+  body .generator_choose_additional ul {
+    margin: auto 15em;
+  }
 }/*# sourceMappingURL=main.css.map */
