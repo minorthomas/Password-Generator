@@ -1,5 +1,6 @@
 const getInputPassword = document.querySelector("#generator-input");
 const getButtonGeneratePassword = document.querySelector("#generator-button");
+const getAdditionnalSection = document.querySelector("#generator-choose_additional")
 
 const getFirstRadio = document.querySelector("#radio_first");
 const getSecondRadio = document.querySelector("#radio_second");
@@ -11,7 +12,7 @@ const getSecondCheckbox = document.querySelector("#checkbox_second");
 const getThirdCheckbox = document.querySelector("#checkbox_third");
 const getFourthCheckbox = document.querySelector("#checkbox_fourth");
 
-const test = document.querySelector(".test");
+const getAdditionnalError = document.querySelector("#generator-choose_additional-error");
 
 function generatePassword(length) {
     let result = '';
@@ -33,6 +34,13 @@ function generatePassword(length) {
     }
     if (getFourthCheckbox.checked) {
         characters += specialCharacters;
+    }
+
+    if (getFirstCheckbox.checked === false && getSecondCheckbox.checked === false && getThirdCheckbox.checked === false && getFourthCheckbox.checked === false) {
+        getAdditionnalError.style.display = "block";
+        getAdditionnalError.textContent = "Veuillez sélectionner au moins un paramètre!"
+    } else {
+        getAdditionnalError.style.display = "none";
     }
 
     let charactersLength = characters.length;
