@@ -3,11 +3,12 @@
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Sunflower", sans-serif;
 }
 
 body {
   margin: 0 auto;
+  padding: 0;
   box-sizing: border-box;
 }
 body a {
@@ -21,4 +22,121 @@ body button {
 }
 body li {
   list-style: none;
+}
+
+#generator .generator_password {
+  display: flex;
+  flex-direction: column;
+}
+#generator .generator_password_input {
+  width: 90%;
+  border: solid 0.1em lightgrey;
+  border-radius: 0.3em;
+  margin: auto;
+  text-align: center;
+  padding: 1em;
+}
+#generator .generator_password_button {
+  padding: 1em;
+  margin: auto;
+  cursor: pointer;
+}
+#generator .generator_password_button:hover {
+  color: blue;
+}
+#generator .generator_choose_characters ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: space-around;
+}
+#generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+#generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio] + .generator_choose_characters_radio_label:before {
+  content: "";
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+  margin-right: 0.4em;
+}
+#generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio]:checked + .generator_choose_characters_radio_label:before {
+  background-color: #3197EE;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+#generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio]:focus + .generator_choose_characters_radio_label:before {
+  outline: none;
+  border-color: #3197EE;
+}
+#generator .generator_choose_characters ul li .generator_choose_characters_radio input[type=radio] + .generator_choose_characters_radio_label:empty:before {
+  margin-right: 0;
+}
+#generator .generator_choose_additional_checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+#generator .generator_choose_additional_checkbox_input {
+  display: none;
+}
+#generator .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon {
+  background-color: #00a4ff;
+}
+#generator .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon:before {
+  transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+}
+#generator .generator_choose_additional_checkbox_input:checked + .generator_choose_additional_checkbox_icon:after {
+  transform: translate3d(20px, 2px, 0);
+}
+#generator .generator_choose_additional_checkbox_icon {
+  position: relative;
+  display: inline-block;
+  max-width: 42px;
+  min-width: 42px;
+  min-height: 24px;
+  max-height: 24px;
+  background-color: #bebebe;
+  border-radius: 22px;
+  vertical-align: text-bottom;
+  transition: all 0.3s linear;
+}
+#generator .generator_choose_additional_checkbox_icon:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 38px;
+  height: 20px;
+  background-color: #bebebe;
+  border-radius: 11px;
+  transform: translate3d(2px, 2px, 0) scaleX(1);
+  transition: all 0.25s linear;
+}
+#generator .generator_choose_additional_checkbox_icon:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 11px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+  transform: translate3d(2px, 2px, 0);
+  transition: all 0.2s ease-in-out;
+}
+#generator .generator_choose_additional_checkbox-label {
+  font-size: 14px;
+  margin-left: 5px;
+  font-weight: 400;
 }/*# sourceMappingURL=main.css.map */

@@ -2,10 +2,15 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF_8">
+    <meta http_equiv="X_UA_Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device_width, initial_scale=1.0">
     <link rel="stylesheet" href="style/main.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500&display=swap" rel="stylesheet">
+
     <title>Password Generator</title>
 </head>
 
@@ -26,7 +31,7 @@
                 générer un
                 <strong>mot de passe</strong> sur mesure et <strong>aléatoire</strong>!
                 </br>
-                Vous pouvez également modifier celui-ci s'il ne vous convient pas!
+                Vous pouvez également modifier celui_ci s'il ne vous convient pas!
             </p>
 
         </div>
@@ -35,70 +40,92 @@
     <section id="generator">
         <h2>Générez un <strong>mot de passe</strong></h2>
 
-        <input id="generator-input" type="text" placeholder="Mot de passe" />
+        <div class="generator_password">
+            <input class="generator_password_input" type="text" placeholder="Mot de passe" />
 
-        <button id="generator-button">Générer nouveau mot de passe</button>
+            <button class="generator_password_button">Générer</button>
+        </div>
 
-        <div id="generator-choose_characters">
+        <div class="generator_choose_characters">
 
-            <h3>Sélectionnez le nombre de caractères</h3>
+            <h3>Taille du <strong>mot de passe</strong></h3>
             <ul>
                 <li>
-                    <input class="generator-choose_characters-radio" id="radio_first" name="radio_characters"
-                        type="radio" value="8" checked>
-                    <label for="radio_first">8 caractères</label>
+                    <label class="generator_choose_characters_radio">
+                        <input class="generator_choose_characters_radio_input" id="radio_first" type="radio" value="8"
+                            name="radio_characters" checked />
+                        <p class="generator_choose_characters_radio_label">8</p>
+                    </label>
                 </li>
 
                 <li>
-                    <input class="generator-choose_characters-radio" id="radio_second" name="radio_characters"
-                        type="radio" value="16">
-                    <label for="radio_second">16 caractères</label>
+                    <label class="generator_choose_characters_radio">
+                        <input class="generator_choose_characters_radio_input" id="radio_second" type="radio" value="16"
+                            name="radio_characters" />
+                        <p class="generator_choose_characters_radio_label">16</p>
+                    </label>
                 </li>
 
                 <li>
-                    <input class="generator-choose_characters-radio" id="radio_third" name="radio_characters"
-                        type="radio" value="32">
-                    <label for="radio_third">32 caractères</label>
+                    <label class="generator_choose_characters_radio">
+                        <input class="generator_choose_characters_radio_input" id="radio_third" type="radio" value="32"
+                            name="radio_characters" />
+                        <p class="generator_choose_characters_radio_label">32</p>
+                    </label>
                 </li>
 
                 <li>
-                    <input class="generator-choose_characters-radio" id="radio_fourth" name="radio_characters"
-                        type="radio" value="64">
-                    <label for="radio_fourth">64 caractères</label>
+                    <label class="generator_choose_characters_radio">
+                        <input class="generator_choose_characters_radio_input" id="radio_fourth" type="radio" value="64"
+                            name="radio_characters" />
+                        <p class="generator_choose_characters_radio_label">64</p>
+                    </label>
                 </li>
             </ul>
         </div>
 
-        <div id="generator-choose_additional">
+        <div class="generator_choose_additional">
 
             <h3>Paramètres supplémentaires</h3>
             <ul>
                 <li>
-                    <input class="generator-choose_characters-checkbox" id="checkbox_first" name="checkbox_additional"
-                        type="checkbox" checked>
-                    <label for="checkbox_first">Minuscules</label>
+                    <label class="generator_choose_additional_checkbox">
+                        <input class="generator_choose_additional_checkbox_input" id="checkbox_first" type="checkbox"
+                            name="checkbox_additional" checked />
+                        <i class="generator_choose_additional_checkbox_icon"></i>
+                        <p class="generator_choose_additional_checkbox_label">Minuscules</p>
+                    </label>
                 </li>
 
                 <li>
-                    <input class="generator-choose_characters-checkbox" id="checkbox_second" name="checkbox_additional"
-                        type="checkbox">
-                    <label for="checkbox_second">Majuscules</label>
+                    <label class="generator_choose_additional_checkbox">
+                        <input class="generator_choose_additional_checkbox_input" id="checkbox_second" type="checkbox"
+                            name="checkbox_additional" />
+                        <i class="generator_choose_additional_checkbox_icon"></i>
+                        <p class="generator_choose_additional_checkbox_label">Majuscule</p>
+                    </label>
                 </li>
 
                 <li>
-                    <input class="generator-choose_characters-checkbox" id="checkbox_third" name="checkbox_additional"
-                        type="checkbox">
-                    <label for="checkbox_third">Chiffres</label>
+                    <label class="generator_choose_additional_checkbox">
+                        <input class="generator_choose_additional_checkbox_input" id="checkbox_third" type="checkbox"
+                            name="checkbox_additional" />
+                        <i class="generator_choose_additional_checkbox_icon"></i>
+                        <p class="generator_choose_additional_checkbox_label">Chiffres</p>
+                    </label>
                 </li>
 
                 <li>
-                    <input class="generator-choose_characters-checkbox" id="checkbox_fourth" name="checkbox_additional"
-                        type="checkbox">
-                    <label for="checkbox_fourth">Caractères spéciaux</label>
+                    <label class="generator_choose_additional_checkbox">
+                        <input class="generator_choose_additional_checkbox_input" id="checkbox_fourth" type="checkbox"
+                            name="checkbox_additional" />
+                        <i class="generator_choose_additional_checkbox_icon"></i>
+                        <p class="generator_choose_additional_checkbox_label">Caractères spéciaux</p>
+                    </label>
                 </li>
             </ul>
 
-            <p id="generator-choose_additional-error" class="error"></p>
+            <p class="generator_choose_additional_error" class="error"></p>
         </div>
     </section>
 

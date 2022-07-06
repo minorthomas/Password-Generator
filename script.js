@@ -1,6 +1,7 @@
-const getInputPassword = document.querySelector("#generator-input");
-const getButtonGeneratePassword = document.querySelector("#generator-button");
-const getAdditionnalSection = document.querySelector("#generator-choose_additional")
+const getInputPassword = document.querySelector(".generator_password_input");
+const getButtonGeneratePassword = document.querySelector(".generator_password_button");
+const getAdditionnalSection = document.querySelector(".generator_choose_additional")
+const getAdditionnalError = document.querySelector(".generator_choose_additional_error");
 
 const getFirstRadio = document.querySelector("#radio_first");
 const getSecondRadio = document.querySelector("#radio_second");
@@ -12,7 +13,7 @@ const getSecondCheckbox = document.querySelector("#checkbox_second");
 const getThirdCheckbox = document.querySelector("#checkbox_third");
 const getFourthCheckbox = document.querySelector("#checkbox_fourth");
 
-const getAdditionnalError = document.querySelector("#generator-choose_additional-error");
+
 
 function generatePassword(length) {
     let result = '';
