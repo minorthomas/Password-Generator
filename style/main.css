@@ -26,7 +26,7 @@ body[mode=dark] a {
   color: white;
 }
 body[mode=dark] a:hover {
-  color: #64c9ff !important;
+  color: #00a4ff !important;
 }
 body a {
   text-decoration: none;
@@ -97,22 +97,37 @@ header .switch .slider::before {
   display: flex;
   flex-direction: column;
 }
-#generator .generator_password_input {
-  width: 90%;
+#generator .generator_password div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#generator .generator_password div .generator_password_input {
   border: solid 0.1em lightgrey;
   border-radius: 0.3em;
-  margin: auto;
   text-align: center;
   padding: 1em;
   font-size: 1em;
 }
-#generator .generator_password_input:focus {
+#generator .generator_password div .generator_password_input:focus {
   background-color: rgb(243, 243, 243);
+}
+#generator .generator_password div button {
+  padding: 1em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  background-color: #00a4ff;
+  color: white;
+}
+#generator .generator_password div button:hover {
+  color: black;
+  background-color: #64c9ff;
 }
 #generator .generator_password_button {
   padding: 1em;
   border-radius: 0.3em;
-  margin: 0.5em auto 0 auto;
+  margin: 1em 0 0;
+  align-self: flex-start;
   cursor: pointer;
   background-color: #00a4ff;
   color: white;
@@ -264,6 +279,10 @@ header .switch .slider::before {
 @media only screen and (min-width: 576px) {
   body {
     width: 566px;
+  }
+
+  .generator_password_input {
+    width: 80%;
   }
 }
 @media only screen and (min-width: 1200px) {
