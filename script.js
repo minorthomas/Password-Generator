@@ -23,7 +23,7 @@ function generatePassword(length) {
     let lettersLowercase = "abcdefghijklmnopqrstuvwxyz";
     let lettersUppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let numbers = "0123456789";
-    let specialCharacters = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+    let specialCharacters = "!\"#$%&'()*+-./;<=>?@[\\]^_`{}~";
 
     if (getFirstCheckbox.checked) {
         characters += lettersLowercase;
