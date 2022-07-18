@@ -13,6 +13,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 320px;
+  transition: 0.4s smooth;
+  transition-property: background-color, color;
 }
 body[mode=light] {
   color: black;
@@ -295,11 +297,9 @@ header .switch .slider::before {
   body {
     width: 566px;
   }
-
   .generator_password_input {
     width: 80%;
   }
-
   .generator_password_button {
     width: 50% !important;
   }

@@ -12,6 +12,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     width: 320px;
+    transition: 0.4s smooth;
+    transition-property: background-color, color;
 
     &[mode="light"] {
         color: black;
